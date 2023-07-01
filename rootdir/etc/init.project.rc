@@ -1,0 +1,174 @@
+# MTK project .rc configure
+
+on early-init
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules trace_mmstat.ko
+
+# C3T code for HQ-218877 by zoujiarong at 2022.08.12 start
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.nfc@1.2-service.rc
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.secure_element@1.2-service-mediatek.rc
+# C3T code for HQ-218877 by zoujiarong at 2022.8.12 end
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+
+on post-fs-data
+#C3T code for HQ-229719 by zhoumengxuan at 22.8.26 start
+# add for fpsensor Fingerprint
+    chmod 660 /dev/fpsensor
+    chown system system /dev/fpsensor
+#C3T code for HQ-229719 by zhoumengxuan at 22.8.26 end
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+#C3T-T code for HQ-273187 by chenjian at 2023/1/12 start
+#touch
+    chown system system /sys/class/touch/touch_dev/palm_sensor
+#C3T-T code for HQ-273187 by chenjian at 2023/1/12 end
+
+#sar
+    chmod 0660 /dev/sar
+    chown system system /dev/sar
+
+#sar
+    chmod 0660 /sys/devices/virtual/qvga_cam/qvga_depth/light
+    chown system system /sys/devices/virtual/qvga_cam/qvga_depth/light
+
+#flash
+    chmod 0660 /sys/devices/platform/flashlights_led191/led191_FLASH
+    chown system system /sys/devices/platform/flashlights_led191/led191_FLASH
+    chmod 0660 /sys/devices/platform/flashlights_led191/led191_FLASH_PWN
+    chown system system /sys/devices/platform/flashlights_led191/led191_FLASH_PWN
+
+#C3T code for HQ-224157 by zhoumengxuan at 22.7.30 start
+#fingerprint
+#fpc
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/irq
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/irq
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/wakeup_enable
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/wakeup_enable
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/clk_enable
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/clk_enable
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/modalias
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/modalias
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/hw_reset
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/hw_reset
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/authen_fd/performance
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/spi2.0/authen_fd/performance
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/statistics/modalias
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/statistics/modalias
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/of_node/modalias
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/of_node/modalias
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/power/modalias
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/power/modalias
+    chown  system   system  /sys/devices/platform/11012000.spi2/spi_master/spi2/subsystem/modalias
+    chmod  0660     /sys/devices/platform/11012000.spi2/spi_master/spi2/subsystem/modalias
+#C3T code for HQ-224157 by zhoumengxuan at 22.7.30 end
+
+    chmod 0666 /dev/metis
+    restorecon /dev/metis
+
+    chown 0666 /sys/module/metis/parameters
+    chown root system /sys/module/metis/parameters
+
+on init
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
+#C3T code for HQ-223374 by qianxiaoming at 20220728 start
+service setsarcal /system/vendor/bin/setsarcal.sh
+    class main
+    user root
+    oneshot
+    group root system
+    seclabel u:r:meta_tst:s0
+#C3T code for HQ-223374 by qianxiaoming at 20220728 end
+
+#C3T-T code for HQ-279427 add by xumingyang at 2023/02/09 start
+service panel-info-sh /system/vendor/bin/sh /vendor/bin/init.panel_info.sh
+    class main
+    user root
+    oneshot
+    group root system
+    seclabel u:r:meta_tst:s0
+
+# start mmstat
+on property:sys.boot_completed=1
+    mkdir /sys/kernel/tracing/instances/mmstat 711
+    write /sys/kernel/tracing/instances/mmstat/tracing_on 0
+    write /sys/kernel/tracing/instances/mmstat/buffer_size_kb 16
+    write /sys/kernel/tracing/instances/mmstat/events/mmstat/enable 1
+    write /sys/kernel/tracing/instances/mmstat/tracing_on 1
+
+    start panel-info-sh
+#C3T-T code for HQ-279427 add by xumingyang at 2023/02/09 end
+
+# C3T code for HQ-223904 by hongwei at 2022/9/13  start
+service service_nv_protect /vendor/bin/misc_writer --nv_protect
+    disabled
+    oneshot
+
+on property:vendor.service_nv_protect=start
+    start service_nv_protect
+# C3T code for HQ-223904 by hongwei at 2022/9/13  end
+
+#C3T-T code for HQ-277741 add by tanrong at 2023/01/11 start
+#Touch
+on property:sys.tp.grip_enable=0
+    write /proc/nvt_edge_reject_switch 1
+on property:sys.tp.grip_enable=90
+    write /proc/nvt_edge_reject_switch 3
+on property:sys.tp.grip_enable=270
+    write /proc/nvt_edge_reject_switch 2
+#Touch2
+on property:sys.tp.grip_enable=0
+    write /sys/devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/fts_edge_mode 0
+on property:sys.tp.grip_enable=90
+    write /sys/devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/fts_edge_mode 1
+on property:sys.tp.grip_enable=270
+    write /sys/devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/fts_edge_mode 2
+#Touch3
+on property:sys.tp.grip_enable=0
+    write /sys/devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/misc/edge_restain 0
+on property:sys.tp.grip_enable=90
+    write /sys/devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/misc/edge_restain 1
+on property:sys.tp.grip_enable=270
+    write /sys/devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/misc/edge_restain 2
+#C3T-T code for HQ-277741 add by tanrong at 2023/01/11 end
