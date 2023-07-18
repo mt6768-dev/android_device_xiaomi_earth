@@ -67,6 +67,9 @@ PRODUCT_PACKAGES += \
     init.sensor_1_0.rc \
     ueventd.mt6768.rc
 
+PRODUCT_PACKAGES += \
+    init.recovery.mt6768.rc
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
