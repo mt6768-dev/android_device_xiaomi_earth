@@ -79,6 +79,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
 
+# Cgroup
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
