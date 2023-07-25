@@ -217,6 +217,7 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlayEarth \
     FrameworksResOverlayEarth \
     SystemUIOverlayEarth \
     TelephonyOverlayEarth \
