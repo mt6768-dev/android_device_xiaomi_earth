@@ -269,7 +269,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
-    libwifi-hal-mt66xx \
     android.hardware.wifi@1.0-service-lazy
 
 PRODUCT_PACKAGES += \
