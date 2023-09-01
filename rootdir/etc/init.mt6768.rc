@@ -118,6 +118,10 @@ on early-fs
     chown system system /sys/class/power_supply/battery/input_suspend
 #C3T-T code for HQ-272420 by tanrong at 20230109 end
 
+    # Turn backlight on and switch to backlight trigger
+    write /sys/class/leds/lcd-backlight/brightness "1000"
+    write /sys/class/leds/lcd-backlight/trigger "backlight"
+
 on fs
     write /proc/bootprof "INIT:fs"
     start vendor.boot-hal-1-2
