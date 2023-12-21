@@ -257,3 +257,4 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.PowerHalMgrServiceImpl=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.PowerHalWifiMonitor=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.gralloc4=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.MDP=$(VENDOR_LOG_LEVEL) \
