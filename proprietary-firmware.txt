@@ -1,0 +1,10 @@
+# Firmware - from earth-user 14 UP1A.231005.007 V816.0.2.0.UCVMIXM release-keys
+gz.img;AB
+lk.img;AB
+logo.bin:logo.img;AB
+md1img.img;AB
+preloader_earth.bin:preloader_raw.img;AB
+scp.img;AB
+spmfw.img;AB
+sspm.img;AB
+tee.img;AB
