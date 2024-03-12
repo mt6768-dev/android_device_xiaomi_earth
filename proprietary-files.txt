@@ -509,6 +509,15 @@ vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
 
+# Camera Configs
+vendor/etc/camera/768_seg_without_det_with_softmax.mnn.tempcache
+vendor/etc/camera/aivsModels1
+vendor/etc/camera/aivsParams
+vendor/etc/camera/aivsParams2
+vendor/etc/camera/dualcam_bokeh_params.json
+vendor/etc/camera/dualcam_bokeh_params_front.json
+vendor/etc/camera/preview_bokeh_params.json
+
 # Connectivity
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
