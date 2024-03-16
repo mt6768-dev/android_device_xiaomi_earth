@@ -261,7 +261,6 @@ vendor/etc/audio_param_global/Volume_ParamUnitDesc.xml
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/firmware/BT_FW.cfg
-vendor/firmware/soc1_0_ram_bt_1a_1_hdr.bin
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/libbluetooth_mtk.so
 vendor/lib/libbluetooth_mtk_pure.so
@@ -270,6 +269,9 @@ vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbt-vendor.so
+
+# Bluetooth (Firmware) - from A145PXXU1AWA3
+vendor/firmware/soc1_0_ram_bt_1a_1_hdr.bin|9cd0d79cde76a59ddd8545b1621af1176c5f9605
 
 # Bluetooth (A2DP)
 vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
