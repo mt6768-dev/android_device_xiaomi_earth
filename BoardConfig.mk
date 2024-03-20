@@ -94,6 +94,12 @@ TARGET_KERNEL_CONFIG := earth_defconfig
 TARGET_KERNEL_NO_GCC := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 
+# NFC
+ODM_MANIFEST_SKUS += \
+    aether
+
+ODM_MANIFEST_AETHER_FILES := $(DEVICE_PATH)/manifest_aether.xml
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072                  	# 2048     * 64   (pagesize)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864        	# 65536    * 1024 (sdc27)
