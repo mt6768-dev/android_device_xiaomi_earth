@@ -1061,6 +1061,10 @@ vendor/lib/libvt_custom.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
+# Secure Element
+vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+vendor/odm/etc/init/aether/android.hardware.secure_element@1.2-service-mediatek.rc:odm/etc/init/aether/android.hardware.secure_element@1.2-service-mediatek.rc
+
 # Sensors
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6768.so
