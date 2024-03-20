@@ -204,6 +204,12 @@ on late-fs
     write /proc/bootprof "INIT:Mount_END --late"
 
 on post-fs-data
+    mkdir /data/vendor 0777 nfc nfc
+    mkdir /data/vendor/nfc 0777 nfc nfc
+    mkdir /data/vendor/nfc/param 0777 nfc nfc
+    chmod 0777 /dev/nq-nci
+    chown nfc nfc /dev/nq-nci
+
     mkdir /data/vendor/silead 0770 system system
 #C3T code for HQ-224157 by zhoumengxuan at 22.7.30 start
     mkdir /data/vendor/fpc 0777 system system
