@@ -1075,10 +1075,10 @@ vendor/lib64/libksensor.so
 vendor/lib64/libsensor_custom.so
 vendor/lib64/sensors.camera.light.so
 
-# USB
-vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
-vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
--vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
+# USB - from earth-user 12 SP1A.210812.016 V13.0.2.0.SCVCNXM release-keys
+vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2|712835231daeaae8513e195af91358df76fda3c8
+vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc|1051e81015f3943d89c99a288c8b9292be460c82
+-vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml|86942c5f9a86f0947775ada5be00cb9932b56c8c
 
 # Wi-Fi
 vendor/bin/wlan_assistant
