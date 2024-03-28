@@ -719,7 +719,7 @@ vendor/lib64/libviagpsrpc.so
 -system_ext/framework/mediatek-telecom-common.jar:framework/mediatek-telecom-common.jar
 -system_ext/framework/mediatek-telephony-base.jar:framework/mediatek-telephony-base.jar
 -system_ext/framework/mediatek-telephony-common.jar:framework/mediatek-telephony-common.jar
--system_ext/priv-app/ImsService/ImsService.apk:priv-app/ImsService/ImsService.apk
+-system_ext/priv-app/ImsService/ImsService.apk:priv-app/ImsService/ImsService.apk|e88de927bd1c81f7aea42535f4eccbdf092cce1b
 system_ext/bin/vtservice
 system_ext/etc/init/init.vtservice.rc
 system_ext/lib64/libcomutils.so
