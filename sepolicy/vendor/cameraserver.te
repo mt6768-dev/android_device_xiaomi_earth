@@ -1,1 +1,2 @@
 get_prop(cameraserver, vendor_camera_prop)
+binder_call(cameraserver, mtk_hal_sensors)

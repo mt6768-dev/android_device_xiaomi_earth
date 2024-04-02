@@ -1,0 +1,20 @@
+# Allow access to the HALs
+hal_client_domain(mtk_hal_sensors, hal_graphics_allocator);
+
+# Allow mtk_hal_sensors to find fwk_camera_service
+allow mtk_hal_sensors fwk_camera_service:service_manager find;
+
+# Allow mtk_hal_sensors to find hal_graphics_mapper_hwservice
+allow mtk_hal_sensors hal_graphics_mapper_hwservice:hwservice_manager find;
+
+# Allow mtk_hal_sensors to find hidl_token_hwservice
+allow mtk_hal_sensors hidl_token_hwservice:hwservice_manager find;
+
+# Allow sensors HAL to access ged
+allow mtk_hal_sensors proc_ged:file r_file_perms;
+
+# Allow binder communication with cameraserver
+binder_call(mtk_hal_sensors, cameraserver)
+
+get_prop(mtk_hal_sensors, camera_config_prop)
+get_prop(mtk_hal_sensors, vendor_camera_prop)
