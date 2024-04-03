@@ -1,0 +1,3 @@
+# Global
+ro.fota.oem                        u:object_r:build_prop:s0
+ro.product.marketname              u:object_r:build_prop:s0
