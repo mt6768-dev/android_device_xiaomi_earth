@@ -1176,7 +1176,7 @@ service mi_thermald /system/vendor/bin/mi_thermald
     oneshot
     disabled
 
-service charger /system/bin/charger
+service vendor.charger /system/bin/charger
     class charger
     user system
     group system graphics wakelock input
