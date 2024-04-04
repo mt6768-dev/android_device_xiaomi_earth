@@ -670,6 +670,9 @@ vendor/lib64/libsl_fp_impl.so
 vendor/lib64/vendor.fpsensor.hardware.fpsensorhidlsvc@2.0.so
 vendor/lib64/vendor.silead.hardware.fingerprintext@1.0.so
 
+# FM Radio
+-system_ext/lib64/libfmjni.so:system/lib64/libfmjni.so
+
 # Fuelgauge
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
