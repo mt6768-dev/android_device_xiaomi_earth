@@ -60,3 +60,6 @@ system_ext 			  /system_ext 		 ext4   ro 												             wait,slotselec
 # External Storage
 /devices/platform/externdevice*   auto                   auto   												             defaults voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/mt_usb*         auto                   vfat   												             defaults voldmanaged=usbotg:auto
+
+# ZRAM
+/dev/block/zram0                  none                   swap   defaults                                                                                                     zramsize=55%
