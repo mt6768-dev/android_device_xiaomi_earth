@@ -1,5 +1,6 @@
 # Fingerprint
 vendor.fpsensor.hardware.fpsensorhidlsvc::IFpsensorHidlSvc                           u:object_r:fp_ext_svc2_hwservice:s0
+vendor.silead.hardware.fingerprintext::ISileadFingerprint                            u:object_r:hal_fingerprint_hwservice:s0
 vendor.xiaomi.hardware.fx.tunnel::IMiFxTunnel                                        u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
 vendor.xiaomi.hardware.fingerprintextension::IXiaomiFingerprint                      u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
 com.fingerprints.extension::IFingerprintEngineering                                  u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
