@@ -128,6 +128,9 @@ PRODUCT_COPY_FILES += \
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_xiaomi_earth)
 
+# ION
+$(call soong_config_set_bool,libion,legacy_impl,true)
+
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
