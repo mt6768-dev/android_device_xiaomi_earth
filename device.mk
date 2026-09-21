@@ -99,9 +99,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
-PRODUCT_PACKAGES += \
-    fastbootd
-
 # Fingerprint
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.kl,$(LOCAL_PATH)/configs/keylayout,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout)
