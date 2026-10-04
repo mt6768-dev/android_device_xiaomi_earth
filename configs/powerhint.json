@@ -182,15 +182,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "SchedBoost",
-      "Path": "/proc/perfmgr/boost_ctrl/eas_ctrl/sched_boost",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "DoubleTapToWakeEnable",
       "Path": "/sys/touchpanel/double_tap",
       "Values": [
@@ -319,12 +310,6 @@
       "Node": "DRAMOppMin",
       "Duration": 3000,
       "Value": "0"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "SchedBoost",
-      "Duration": 3000,
-      "Value": "1"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
