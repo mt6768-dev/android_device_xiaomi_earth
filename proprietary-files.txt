@@ -703,7 +703,6 @@ vendor/etc/init/netdagent.rc
 vendor/etc/init/tetheroffloadservice.rc
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libifcutils_mtk.so
-vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
 # Thermal
 vendor/bin/mi_thermald
@@ -950,8 +949,6 @@ vendor/lib64/libutinterface_custom_md.so;DISABLE_CHECKELF
 vendor/lib64/libutinterface_md.so;DISABLE_CHECKELF
 vendor/lib64/libverno.so
 vendor/lib64/libwpfa.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
 # Radio (IMS)
 vendor/bin/hw/vtservice_hidl
